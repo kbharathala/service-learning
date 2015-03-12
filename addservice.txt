@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title> Add Service</title>
+  <link href="Site.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="main">
+<h1>Add Service</h1>
+
+<form action="insert.php" method="post">
+Full Name: <input type="text" name="fullname"><br>
+Username: <input type="text" name="username"><br>	
+Location: <input type="text" name="location"><br>
+Hours: <input type="text" name="hours"><br>	
+Date: <input type="text" name="date"><br>	
+<input type="submit">
+</form>
+
+<?php
+
+$username = "root";
+$password = "";
+$hostname = "localhost"; 
+$db = "service";
+
+//connection to the database
+$con = mysqli_connect($hostname, $username, $password, $db);
+
+// Check connection
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+
+$sql="INSERT INTO service (FullName, hours, username, location, date)
+VALUES
+('$_POST[fullname]','$_POST[hours]','$_POST[username]', '$_POST[location]','$_POST[date]')";
+
+if (!mysqli_query($con,$sql))
+  {
+  die('Error: ' . mysqli_error($con));
+  }
+echo "1 record added";
+
+mysqli_close($con);
+?>
+
+<br>
+<br>
+
+<a href="service.php">Return</a>
+
+</body>
+
+</div>
+
+</html>

@@ -1,0 +1,1 @@
+<p>&copy;kblabs <?php echo date("M Y"); ?></p>
