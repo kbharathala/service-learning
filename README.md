@@ -9,3 +9,6 @@ Further things to implement:
 1) BackEnd Access for admin to approve student hours.
 2) Better integration with current system at Mission San Jose High School
 3) Redo in Django / Flask / Node??
+
+REDONE IN RUBY!!
+https://github.com/kbharathala/service-learning-ruby
